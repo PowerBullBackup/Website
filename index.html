@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="12V Router UPS Pakistan. Power Bull provides up to 5 hours of backup with high-efficiency 4S Li-ion and zero reboot technology.">
+    <title>Power Bull | 12V Backup Power</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Noto+Nastaliq+Urdu:wght@400;700&family=Outfit:wght@300;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0b101e;
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --text-main: #ffffff;
+            --text-muted: #94a3b8;
+            --accent: #ffd700; 
+            --accent-glow: rgba(255, 215, 0, 0.15);
+            --accent-glow-strong: rgba(255, 215, 0, 0.4);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+            padding-top: 80px;
+        }
+
+        /* High-Tech & Native Typography */
+        .tech-font {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9em;
+            letter-spacing: -0.5px;
+            color: #fff;
+            background: rgba(255, 215, 0, 0.15);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 700;
+            display: inline-block;
+        }
+
+        .nastaliq {
+            font-family: 'Noto Nastaliq Urdu', serif;
+            font-size: 22px;
+            color: var(--accent);
+            line-height: 2.2;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        /* Utility */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .highlight {
+            color: var(--accent);
+        }
+
+        /* Sticky Navbar */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 15px 0;
+            z-index: 1000;
+            background: rgba(11, 16, 30, 0.85); 
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid var(--card-border);
+            transition: all 0.3s ease;
+        }
+
+        .navContent {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 900;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .logo svg {
+            width: 36px;
+            height: 36px;
+            fill: var(--accent);
+        }
+
+        .nav-cta {
+            background: var(--accent);
+            color: #000;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-size: 15px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+            background: #fff;
+        }
+
+        /* Hero */
+        .hero {
+            position: relative;
+            padding: 60px 0 60px;
+            text-align: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+            z-index: -1;
+            border-radius: 50%;
+        }
+
+        .hero h1 {
+            font-size: clamp(40px, 8vw, 72px);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+        
+        /* Layout for Image & Calculator in Hero */
+        .hero-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: stretch;
+            max-width: 1000px;
+            margin: 40px auto 0;
+            text-align: left;
+        }
+
+        .product-image-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5), 0 0 0 1px rgba(255, 215, 0, 0.2);
+            padding: 20px;
+            backdrop-filter: blur(20px);
+            background: rgba(17, 24, 39, 0.6);
+            position: relative;
+            z-index: 5;
+        }
+
+        .product-image-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 16px;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .product-image-container:hover img {
+            transform: scale(1.03);
+        }
+
+        /* Interactive Calculator inside Hero Split */
+        .calc-box {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            padding: 40px 30px;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+            text-align: center;
+        }
+        
+        .router-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+
+        .router-labels span {
+            transition: color 0.3s;
+            width: 33%;
+        }
+        
+        .router-labels span.active {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .slider-container { margin: 10px 0 40px; }
+        
+        input[type=range] {
+            width: 100%;
+            -webkit-appearance: none;
+            background: rgba(255,255,255,0.1);
+            height: 8px;
+            border-radius: 5px;
+            outline: none;
+        }
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: var(--accent);
+            cursor: pointer;
+            box-shadow: 0 0 15px var(--accent);
+            transition: transform 0.2s;
+        }
+        input[type=range]::-webkit-slider-thumb:hover { transform: scale(1.1); }
+        
+        .runtime-display {
+            font-size: clamp(36px, 5vw, 56px);
+            font-weight: 900;
+            color: var(--text-main);
+            margin-bottom: 5px;
+            font-family: 'JetBrains Mono', monospace;
+            text-shadow: 0 0 30px var(--accent-glow);
+            transition: color 0.3s ease;
+        }
+        
+        .runtime-label { color: var(--accent); font-size: 18px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px;}
+
+        /* Features */
+        .features {
+            padding: 80px 0;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 60px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 24px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 40px 30px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            grid-column: span 2; /* 3 Items on Bottom Row */
+        }
+        
+        .feature-card:nth-child(1),
+        .feature-card:nth-child(2) {
+            grid-column: span 3; /* 2 Items on Top Row */
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, transparent, var(--accent-glow));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 215, 0, 0.5);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            z-index: 2;
+        }
+
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 215, 0, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            color: var(--accent);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .feature-card:hover .feature-icon {
+            box-shadow: 0 0 25px var(--accent-glow-strong);
+            background: rgba(255, 215, 0, 0.3);
+            color: #fff;
+            transform: scale(1.15);
+        }
+
+        .feature-icon svg {
+            width: 28px;
+            height: 28px;
+            fill: currentColor;
+        }
+
+        .feature-card h3 {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        /* Tech Specifications Table */
+        .specs-section {
+            padding: 40px 0;
+        }
+        
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+            border-radius: 20px;
+            border: 1px solid var(--card-border);
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+        
+        .specs-table th, .specs-table td {
+            padding: 24px;
+            border-bottom: 1px solid var(--card-border);
+        }
+        
+        .specs-table th {
+            font-size: 16px;
+            color: var(--text-muted);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            width: 33%;
+        }
+        
+        .specs-table th.bull-advantage {
+            color: var(--accent);
+            background: rgba(255, 215, 0, 0.05);
+            font-weight: 700;
+        }
+        
+        .specs-table td {
+            font-size: 18px;
+            color: var(--text-muted);
+        }
+        
+        .specs-table td.bull-advantage {
+            background: rgba(255, 215, 0, 0.05);
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .specs-table tr:hover td {
+            background: rgba(255, 255, 255, 0.02);
+        }
+        .specs-table tr:hover td.bull-advantage {
+            background: rgba(255, 215, 0, 0.08);
+        }
+        
+        .specs-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--card-border);
+            padding: 60px 0 40px;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-info {
+            font-size: 18px;
+            color: var(--text-muted);
+            margin-top: 10px;
+        }
+
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: #25d366;
+            color: white;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            z-index: 100;
+            text-decoration: none;
+            cursor: pointer;
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-float svg {
+            width: 32px;
+            height: 32px;
+            fill: currentColor;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        /* Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Settings */
+        @media (max-width: 900px) {
+            .hero-split { grid-template-columns: 1fr; margin-top: 20px; }
+            .feature-card:nth-child(1), .feature-card:nth-child(2), .feature-card {
+                grid-column: span 3; 
+            }
+        }
+        @media (max-width: 768px) {
+            .feature-card:nth-child(1), .feature-card:nth-child(2), .feature-card {
+                grid-column: span 6; 
+            }
+            .hero { padding: 40px 0 80px; }
+            .whatsapp-float { bottom: 20px; right: 20px; width: 50px; height: 50px; }
+            .whatsapp-float svg { width: 26px; height: 26px; }
+            .hero::before { width: 300px; height: 300px; }
+            .specs-table th, .specs-table td { padding: 15px 10px; font-size: 14px; }
+        }
+    </style>
+</head>
+<body>
+    <noscript>
+        <div style="background-color: #ffd700; color: #000; padding: 12px; text-align: center; font-weight: 500;">
+            JavaScript is disabled. For the best experience and full functionality (like animations and copying to clipboard), please enable JavaScript.
+        </div>
+    </noscript>
+
+    <!-- Sticky Navbar -->
+    <nav>
+        <div class="container navContent">
+            <div class="logo">
+                <svg viewBox="0 0 24 24"><path d="M7 2v11h3v9l7-12h-4l3-8z"/></svg> 
+                POWER BULL
+            </div>
+            <a href="https://wa.me/923481181321" class="nav-cta">Order Now</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section class="hero reveal">
+            <h1>Uninterrupted <span class="highlight">Internet</span></h1>
+            <p>Experience continuous backup configured perfectly for your hardware load.</p>
+            
+            <div class="hero-split">
+                <!-- Product Image directly next to Calculator -->
+                <div class="product-image-container">
+                    <img src="power_bull_pro.png" alt="Power Bull Custom Engineered 12V UPS">
+                </div>
+
+                <div class="calc-box">
+                    <div class="runtime-display" id="runtimeDisplay">5.0 <span style="font-size: 32px; font-weight: 400; color: var(--text-muted);">HRS</span></div>
+                    <div class="runtime-label">Estimated Backup</div>
+                    
+                    <div class="slider-container">
+                        <!-- Left-aligned default -> Dual Band (12V) -->
+                        <input type="range" id="loadSlider" min="1" max="3" step="1" value="1" aria-label="Adjust router load to estimate backup time">
+                    </div>
+                    
+                    <div class="router-labels">
+                        <span id="label-1" class="active">Dual Band / Heavy<br><small>(12V)</small></span>
+                        <span id="label-2">Single Band<br><small>(9V)</small></span>
+                        <span id="label-3">Basic Wi-Fi<br><small>(5V)</small></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Specification Compare Table -->
+        <section class="specs-section reveal">
+            <h2 class="section-title">The Engineering Advantage</h2>
+            <div class="table-responsive">
+                <table class="specs-table">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th class="bull-advantage">Power Bull Advantage</th>
+                            <th>Standard Market UPS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Battery Architecture</td>
+                            <td class="bull-advantage"><span class="tech-font">4S Li-ion</span> (High Density)</td>
+                            <td><span class="tech-font">1S / 3S</span> (Lower Voltage)</td>
+                        </tr>
+                        <tr>
+                            <td>Voltage Stability</td>
+                            <td class="bull-advantage"><span class="tech-font">Regulated 12V</span> Constant</td>
+                            <td>Drops as battery drains</td>
+                        </tr>
+                        <tr>
+                            <td>Safety Systems</td>
+                            <td class="bull-advantage"><span class="tech-font">BMS</span> with Cell Balancing</td>
+                            <td>Basic Overcharge only</td>
+                        </tr>
+                        <tr>
+                            <td>Power Transition</td>
+                            <td class="bull-advantage"><span class="tech-font">Zero Reboot Technology</span></td>
+                            <td>Possible Lag / Restart</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="features">
+            <h2 class="section-title reveal">Built For Performance</h2>
+            <div class="features-grid">
+                <!-- Feature 1 -->
+                <div class="feature-card reveal">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><path d="M11 21h-1l1-7H7.5c-.58 0-.57-.32-.38-.66.19-.34.05-.08.16-.28L11.5 2h1l-1 7h3.5c.49 0 .56.33.47.51l-.07.15C12.96 14.55 11 21 11 21z"/></svg>
+                    </div>
+                    <h3>Zero Reboot Technology</h3>
+                    <span class="nastaliq">زیرو ریبوٹ ٹیکنالوجی</span>
+                    <p style="color: var(--text-muted)">Seamless power transition ensures your connected devices stay on without restarting during outages.</p>
+                </div>
+                <!-- Feature 2 -->
+                <div class="feature-card reveal">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
+                    </div>
+                    <h3>Protection Systems</h3>
+                    <span class="nastaliq">اوور چارج اور شارٹ سرکٹ سے تحفظ</span>
+                    <p style="color: var(--text-muted)">Advanced overcharge and short circuit protection keeps your electronics completely safe at all times.</p>
+                </div>
+                <!-- Feature 3 -->
+                <div class="feature-card reveal">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><path d="M16 11V3H8v6H2v12h20V11h-6zm-6-6h4v14h-4V5zm-6 6h4v8H4v-8zm16 8h-4v-6h4v6z"/></svg>
+                    </div>
+                    <h3>Intelligent Cell Balancing</h3>
+                    <span class="nastaliq">انٹیلیجنٹ سیل بیلنسنگ</span>
+                    <p style="color: var(--text-muted)">Smart monitoring maximizes battery life and ensures optimal utilization of each internal <span class="tech-font">Li-ion</span> cell.</p>
+                </div>
+                <!-- Feature 4 -->
+                <div class="feature-card reveal">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><path d="M7 2v11h3v9l7-12h-4l3-8z"/></svg>
+                    </div>
+                    <h3>Stable 12V Output</h3>
+                    <span class="nastaliq">مستحکم 12V ریگولیٹڈ آؤٹ پٹ</span>
+                    <p style="color: var(--text-muted)">Delivers a stable, regulated <span class="tech-font">12V output</span>. The perfect backup for routers, modems, and networking gear.</p>
+                </div>
+                <!-- Feature 5 -->
+                <div class="feature-card reveal">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><path d="M15.67 4H14V2h-4v2H8.33C7.6 4 7 4.6 7 5.33v15.33C7 21.4 7.6 22 8.33 22h7.33c.74 0 1.34-.6 1.34-1.33V5.33C17 4.6 16.4 4 15.67 4zM13 18h-2v-2h2v2zm0-4h-2V9h2v5z"/></svg>
+                    </div>
+                    <h3>High-Efficiency 4S Li-ion</h3>
+                    <span class="nastaliq">ہائی ایفیشینسی 4S لی آئن پاور</span>
+                    <p style="color: var(--text-muted)">Equipped with high-density cells offering massive power storage packed efficiently into a sleek framework.</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="reveal">
+            <div class="footer-content">
+                <div class="logo" style="font-size: 20px;">
+                    POWER BULL
+                </div>
+                <div class="contact-info">
+                    <span class="tech-font">12V Regulated Output</span> | Up to 12 Hours Standby<br><br>
+                    <strong>Email:</strong> powerbullbackup@gmail.com<br>
+                    <strong>Phone:</strong> 0348-1181321
+                </div>
+                <p style="color: var(--text-muted); font-size: 14px; margin-top: 30px;">
+                    &copy; <span id="year"></span> Power Bull. All rights reserved.
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Floating WhatsApp Link -->
+    <a href="https://wa.me/923481181321" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Chat directly with us on WhatsApp">
+        <svg viewBox="0 0 24 24"><path d="M12.01 2.01c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.4 1.33 4.88L2 22l5.35-1.4c1.45.82 3.08 1.26 4.79 1.26 5.46 0 9.91-4.45 9.91-9.91 0-5.46-4.45-9.91-9.91-9.91zm0 18.23c-1.48 0-2.93-.38-4.22-1.09l-.3-.17-3.13.82.83-3.05-.19-.3A8.3 8.3 0 013.72 11.9a8.33 8.33 0 018.3-8.31 8.33 8.33 0 018.31 8.31 8.32 8.32 0 01-8.32 8.33zm4.56-6.17c-.25-.13-1.49-.74-1.72-.82-.23-.08-.4-.13-.57.13-.17.25-.65.82-.8 1-.15.17-.3.19-.55.06a6.83 6.83 0 01-2-1.24 7.55 7.55 0 01-1.38-1.72c-.15-.25-.01-.39.11-.51.11-.11.25-.3.37-.44.13-.15.17-.25.25-.42.08-.17.04-.32-.02-.44-.06-.13-.57-1.38-.78-1.89-.21-.5-.42-.43-.57-.44h-.49c-.19 0-.5.07-.76.35-.26.28-1.01 1-1.01 2.45s1.03 2.85 1.18 3.05c.15.19 2.06 3.14 4.97 4.41.69.3 1.23.48 1.65.61.69.22 1.32.19 1.82.11.56-.09 1.49-.61 1.7-1.2.21-.59.21-1.1.15-1.2-.06-.11-.23-.17-.48-.3z"/></svg>
+    </a>
+
+    <script>
+        // Set current year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Interactive Runtime Calculator Logic
+        const loadSlider = document.getElementById('loadSlider');
+        const runtimeDisplay = document.getElementById('runtimeDisplay');
+        const labels = [
+            document.getElementById('label-1'), // Dual Band (12V)
+            document.getElementById('label-2'), // Single Band (9V)
+            document.getElementById('label-3')  // Basic Wi-Fi (5V)
+        ];
+        
+        // Runtime estimates mapped: 1 => 12V (5hrs), 2 => 9V (8.5hrs), 3 => 5V (12hrs)
+        const runtimeMap = {
+            1: "5.0",
+            2: "8.5",
+            3: "12.0"
+        };
+        
+        loadSlider.addEventListener('input', (e) => {
+            const val = e.target.value;
+            
+            // Pop effect text glow
+            runtimeDisplay.style.color = '#fff';
+            runtimeDisplay.style.textShadow = '0 0 40px var(--accent)';
+            
+            // Update Number
+            runtimeDisplay.innerHTML = `${runtimeMap[val]} <span style="font-size: 32px; font-weight: 400; color: var(--text-muted);">HRS</span>`;
+            
+            // Update Label Active States
+            labels.forEach((label, index) => {
+                if (index + 1 == val) {
+                    label.classList.add('active');
+                } else {
+                    label.classList.remove('active');
+                }
+            });
+            
+            // Settle text color
+            setTimeout(() => {
+                runtimeDisplay.style.color = 'var(--text-main)';
+                runtimeDisplay.style.textShadow = '0 0 30px var(--accent-glow)';
+            }, 100);
+        });
+
+        // Initialize Scroll Reveal Elements
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        
+        window.addEventListener("scroll", reveal);
+        reveal();
+    </script>
+</body>
+</html>
